@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitz Express - Premium Nutritional Supplements</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://www.vitzexpress.com" />
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --light: #f7faff;
+      --dark: #1c2331;
+      --accent: #ff6d00;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      color: #333;
+      line-height: 1.7;
+      background-color: #ffffff;
+      font-weight: 400;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    .nav-menu {
+      display: flex;
+    }
+    
+    .nav-item {
+      margin-left: 30px;
+    }
+    
+    .nav-link {
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: var(--accent);
+    }
+    
+    .cta-button {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2);
+    }
+    
+    .cta-button:hover {
+      background-color: var(--secondary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(13, 71, 161, 0.3);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.9)), url('/api/placeholder/1200/600') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/50/50') center/100px;
+      opacity: 0.1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 24px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 40px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      line-height: 1.6;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero .cta-button {
+      padding: 14px 32px;
+      font-size: 18px;
+      border-radius: 30px;
+      background-color: var(--accent);
+      box-shadow: 0 8px 20px rgba(255, 109, 0, 0.3);
+    }
+    
+    .hero .cta-button:hover {
+      background-color: #ff8f00;
+    }
+    
+    /* About Section */
+    .section {
+      padding: 120px 0;
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    .section:nth-child(even) {
+      background-color: var(--light);
+      position: relative;
+    }
+    
+    .section:nth-child(even):before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/api/placeholder/50/50') center/80px;
+      opacity: 0.03;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+      position: relative;
+    }
+    
+    .section-header:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+    
+    .section-title {
+      font-size: 42px;
+      color: var(--dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .section-subtitle {
+      font-size: 20px;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      line-height: 1.9;
+    }
+    
+    .about-text p {
+      font-weight: 400;
+      font-size: 17px;
+      color: #444;
+      margin-bottom: 24px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.5s;
+    }
+    
+    .about-image:hover {
+      transform: translateY(-10px);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Products Section */
+    .products {
+      background-color: var(--light);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .product-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.4s, box-shadow 0.4s;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .product-image {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .product-image:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background: linear-gradient(to top, rgba(0,0,0,0.03), transparent);
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+    
+    .product-info {
+      padding: 30px;
+    }
+    
+    .product-title {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--dark);
+      font-weight: 700;
+    }
+    
+    .product-description {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    
+    .product-benefits {
+      margin-bottom: 25px;
+    }
+    
+    .benefit {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #444;
+      padding-left: 10px;
+    }
+    
+    .benefit:before {
+      content: "✓";
+      color: var(--accent);
+      margin-right: 12px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    .product-card .cta-button {
+      width: 100%;
+      text-align: center;
+      font-size: 15px;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    
+    /* Why Choose Us Section */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    
+    .why-us-card {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      transition: transform 0.4s;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .why-us-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    
+    .why-us-card:hover:before {
+      opacity: 1;
+    }
+    
+    .why-us-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .why-us-icon {
+      font-size: 42px;
+      color: var(--accent);
+      margin-bottom: 25px;
+      display: inline-block;
+      background-color: rgba(255, 109, 0, 0.1);
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      border-radius: 50%;
+      transition: transform 0.4s, background-color 0.4s;
+    }
+    
+    .why-us-card:hover .why-us-icon {
+      background-color: rgba(255, 109, 0, 0.15);
+      transform: rotateY(180deg);
+    }
+    
+    .why-us-title {
+      font-size: 22px;
+      margin-bottom: 18px;
+      color: var(--dark);
+      font-weight: 700;
+    }
+    
+    .why-us-card p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background-color: var(--light);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .testimonial-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #444;
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .author-info h4 {
+      margin-bottom: 5px;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    
+    .author-company {
+      color: #666;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .contact-info {
+      margin-bottom: 40px;
+    }
+    
+    .contact-info h3 {
+      margin-bottom: 20px;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 22px;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+      margin-right: 15px;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    
+    .contact-detail p {
+      color: #444;
+      font-weight: 300;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .submit-button:hover {
+      background-color: var(--secondary);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .footer-column p {
+      font-weight: 300;
+      line-height: 1.7;
+      color: #ececec;
+      font-size: 14px;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      transition: color 0.3s;
+      font-weight: 300;
+      font-size: 14px;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    
+    .social-link:hover {
+      background-color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: #ccc;
+      font-weight: 300;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Vitz<span>Express</span></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link cta-button">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Premium Nutritional Supplements for Your Business</h1>
+        <p>Global B2B supplier of high-quality nutritional supplements with over two decades of industry expertise.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Who We Are</h2>
+        <p class="section-subtitle">Your Trusted Partner in Nutritional Supplements</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>At Vitz Express, we are a premier supplier of nutritional supplements worldwide, serving businesses across the globe with a commitment to quality and innovation. With over 20 years of market presence, we've established ourselves as a reliable partner for retailers, distributors, and healthcare institutions seeking premium nutritional products.</p>
+          <br>
+          <p>Our comprehensive range includes vitamins, minerals, protein supplements, herbal extracts, and specialized formulations that meet diverse health needs. We pride ourselves on maintaining rigorous quality control standards throughout our supply chain, ensuring that every product that bears our name upholds the highest standards of purity, potency, and effectiveness.</p>
+          <br>
+          <p>Our extensive experience in the B2B supplement market has allowed us to build a network of satisfied clients across six continents. We understand the unique challenges of the nutritional supplement industry and work closely with our partners to develop customized supply solutions that help them succeed in a competitive marketplace.</p>
+        </div>
+        <div class="about-image">
+          <img src="/api/placeholder/600/400" alt="Vitz Express Facility">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="section products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Premium Supplements</h2>
+        <p class="section-subtitle">High-Quality Formulations for Optimal Health</p>
+      </div>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Multivitamin Complex">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Multivitamin Complex</h3>
+            <p class="product-description">Comprehensive formulation with essential vitamins and minerals for daily health maintenance.</p>
+            <div class="product-benefits">
+              <div class="benefit">Complete spectrum of vitamins A to K</div>
+              <div class="benefit">Essential minerals including zinc and magnesium</div>
+              <div class="benefit">Supports immune function and energy production</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Omega-3 Fish Oil">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Omega-3 Fish Oil</h3>
+            <p class="product-description">High-potency, pharmaceutical-grade fish oil with concentrated EPA and DHA.</p>
+            <div class="product-benefits">
+              <div class="benefit">Molecularly distilled for purity</div>
+              <div class="benefit">Supports heart and brain health</div>
+              <div class="benefit">Enhanced bioavailability formulation</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Vitamin D3 + K2">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Vitamin D3 + K2</h3>
+            <p class="product-description">Synergistic combination for optimal calcium absorption and bone health.</p>
+            <div class="product-benefits">
+              <div class="benefit">Highly bioavailable D3 cholecalciferol</div>
+              <div class="benefit">MK-7 form of vitamin K2 for bone support</div>
+              <div class="benefit">Promotes cardiovascular health</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Whey Protein Isolate">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Whey Protein Isolate</h3>
+            <p class="product-description">Ultra-filtered protein with high bioavailability and minimal lactose.</p>
+            <div class="product-benefits">
+              <div class="benefit">90% protein content by weight</div>
+              <div class="benefit">Complete amino acid profile</div>
+              <div class="benefit">Available in various flavors</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Magnesium Complex">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Magnesium Complex</h3>
+            <p class="product-description">Blend of highly bioavailable magnesium forms for comprehensive support.</p>
+            <div class="product-benefits">
+              <div class="benefit">Contains magnesium glycinate, citrate, and malate</div>
+              <div class="benefit">Supports muscle and nerve function</div>
+              <div class="benefit">Promotes relaxation and sleep quality</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/400/300" alt="Probiotics">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Advanced Probiotic Formula</h3>
+            <p class="product-description">Multi-strain formula with delayed-release technology for gut microbiome support.</p>
+            <div class="product-benefits">
+              <div class="benefit">50 billion CFUs per serving</div>
+              <div class="benefit">12 clinically studied bacterial strains</div>
+              <div class="benefit">Shelf-stable formulation</div>
+            </div>
+            <a href="#contact" class="cta-button">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose Vitz Express</h2>
+        <p class="section-subtitle">The Advantages of Partnering With Us</p>
+      </div>
+      <div class="why-us-grid">
+        <!-- Feature 1 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Superior Quality</h3>
+          <p>Our supplements are manufactured in certified facilities adhering to GMP standards, with rigorous testing protocols for purity and potency.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Global Experience</h3>
+          <p>With over 20 years in the market, we've developed extensive knowledge of international regulations and shipping logistics.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Custom Formulations</h3>
+          <p>Our R&D team can develop tailored supplements to meet your specific requirements and target demographics.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Competitive Pricing</h3>
+          <p>Our established supply chain and manufacturing partnerships allow us to offer premium quality at competitive wholesale prices.</p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Reliable Logistics</h3>
+          <p>From order placement to delivery, our streamlined processes ensure timely fulfillment with complete tracking visibility.</p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="why-us-card">
+          <div class="why-us-icon">✓</div>
+          <h3 class="why-us-title">Dedicated Support</h3>
+          <p>Your dedicated account manager provides personalized service and expert guidance throughout our partnership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Testimonials</h2>
+        <p class="section-subtitle">What Our Clients Say</p>
+      </div>
+      <div style="text-align: center; padding: 60px 0;">
+        <h3 style="font-size: 28px; color: var(--primary); margin-bottom: 20px; font-weight: 600;">Coming Soon</h3>
+        <p style="font-size: 18px; color: #555; max-width: 600px; margin: 0 auto; line-height: 1.7;">
+          We're currently collecting feedback from our valued clients. Check back soon to read about their experiences with Vitz Express.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">We're Ready to Serve Your Business Needs</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <!-- Address has been removed -->
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div>
+              <p>+1 (517) 618-1788</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p>sales@vitzexpress.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">🕒</div>
+            <div>
+              <p>Monday - Friday: 9am - 6pm EST</p>
+              <p>Saturday: 10am - 2pm EST</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form>
+            <input type="text" placeholder="Company Name" required>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number">
+            <textarea placeholder="Tell us about your business needs..." required></textarea>
+            <button type="submit" class="submit-button">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Vitz Express</h3>
+          <p>Premium nutritional supplements for businesses worldwide. Over 20 years of trusted market presence.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">f</a>
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">t</a>
+            <a href="#" class="social-link">ig</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul class="footer-links">
+            <li><a href="#products">Vitamins & Minerals</a></li>
+            <li><a href="#products">Protein Supplements</a></li>
+            <li><a href="#products">Omega Fatty Acids</a></li>
+            <li><a href="#products">Probiotics</a></li>
+            <li><a href="#products">Herbal Extracts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Product Catalog</a></li>
+            <li><a href="#">Quality Certifications</a></li>
+            <li><a href="#">White Label Solutions</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Vitz Express. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
